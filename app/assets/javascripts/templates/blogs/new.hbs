@@ -1,0 +1,15 @@
+<h2> New Blog </h2>
+
+<div>
+  <label>Title</label>
+  {{input type="text" value=newBlog.title}}
+  |
+</div>
+<br/>
+<div>
+  <label>Body</label>
+  {{textarea value=newBlog.body}}
+</div>
+<br/>
+<button type='submit' {{action 'createBlog' blog}}>Submit</button>
+<br/><br/>

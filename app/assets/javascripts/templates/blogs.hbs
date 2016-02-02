@@ -1,0 +1,20 @@
+<h1> Blogs </h1>
+<div>
+  {{outlet}}
+</div>
+{{#link-to 'blogs.new'}} New Blog {{/link-to}}
+|
+{{#link-to 'blogs'}} Cancel {{/link-to}}
+<ul>
+  {{#each blogs as |blog|}}
+  <li>
+  <p>
+    {{blog.title}}
+    | {{#link-to 'blogs.edit' blog}} Edit {{/link-to}}
+  </p>
+  <p>
+    {{blog.body}}
+  </p>
+  </li>
+  {{/each}}
+</ul>
