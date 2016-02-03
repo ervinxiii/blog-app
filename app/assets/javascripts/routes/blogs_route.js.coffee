@@ -7,7 +7,7 @@ BlogApp.BlogsRoute = Em.Route.extend
 
 BlogApp.BlogsNewRoute = Em.Route.extend
   setupController: (controller) ->
-    controller.set 'newBlog', {}
+    controller.set 'blog', {}
 
 BlogApp.BlogsEditRoute = Em.Route.extend
   model:(params) ->
