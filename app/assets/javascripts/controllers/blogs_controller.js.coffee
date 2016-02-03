@@ -8,7 +8,6 @@ BlogApp.BlogsNewController = Em.Controller.extend
     createBlog: ->
       blog = @store.createRecord('blog', @get('blog'))
       blog.save().then ((response) =>
-        console.log response
         @transitionToRoute 'blogs'
       ), (response) =>
         alert('Input is missing')
