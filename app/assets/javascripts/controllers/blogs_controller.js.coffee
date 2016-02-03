@@ -11,6 +11,7 @@ BlogApp.BlogsNewController = Em.Controller.extend
         console.log response
         @transitionToRoute 'blogs'
       ), (response) =>
+        alert('Input is missing')
         blog.deleteRecord()
 
 BlogApp.BlogsEditController = Em.Controller.extend
