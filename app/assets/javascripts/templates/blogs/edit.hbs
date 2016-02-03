@@ -1,14 +1,7 @@
 <h2> Edit Blog </h2>
 
-<div>
-  <label>Title</label>
-  {{input type="text" value=blog.title}}
-</div>
-<br/>
-<div>
-  <label>Body</label>
-  {{textarea value=blog.body}}
-</div>
+{{partial "blogs/form"}}
+
 <br/>
 <button type='submit' {{action 'editBlog' blog}}>Submit</button>
 <button type='submit' {{action 'deleteBlog' blog}}>Delete</button>

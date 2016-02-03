@@ -2,16 +2,17 @@ BlogApp.BlogsController = Em.Controller.extend
   blogs: []
 
 BlogApp.BlogsNewController = Em.Controller.extend
-  newBlog: {}
+  blog: {}
 
   actions:
     createBlog: ->
-      blog = @store.createRecord('blog', @get('newBlog'))
-      console.log(blog.get('body'))
+      blog = @store.createRecord('blog', @get('blog'))
+      window.wat = blog
       blog.save().then ((response) =>
-      @transitionToRoute 'blogs'
+        console.log response
+        @transitionToRoute 'blogs'
       ), (response) =>
-      blog.deleteRecord()
+        blog.deleteRecord()
 
 BlogApp.BlogsEditController = Em.Controller.extend
   blog: {}

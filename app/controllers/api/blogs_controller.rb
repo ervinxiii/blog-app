@@ -13,6 +13,12 @@ class Api::BlogsController < ApiController
     end
   end
 
+  def show
+    blog = Blog.find params[:id]
+
+    render json: blog
+  end
+
   def update
     blog = Blog.find params[:id]
 

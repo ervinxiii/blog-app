@@ -1,2 +1,2 @@
-BlogApp.IndexController = Em.Controller.extend()
+BlogApp.IndexController = Em.Controller.extend
   blogs: []
