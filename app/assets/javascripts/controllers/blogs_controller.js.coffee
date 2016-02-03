@@ -7,7 +7,6 @@ BlogApp.BlogsNewController = Em.Controller.extend
   actions:
     createBlog: ->
       blog = @store.createRecord('blog', @get('blog'))
-      window.wat = blog
       blog.save().then ((response) =>
         console.log response
         @transitionToRoute 'blogs'
