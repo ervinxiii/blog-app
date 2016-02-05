@@ -3,8 +3,13 @@ BlogApp.BlogsController = Em.Controller.extend
 
 BlogApp.BlogsNewController = Em.Controller.extend
   blog: {}
+  categories: []
 
   actions:
+    selectCategory: (categoryID) ->
+      category = @store.peekRecord('category', categoryID)
+      @set 'blog.category', category
+
     createBlog: ->
       blog = @store.createRecord('blog', @get('blog'))
       blog.save().then ((response) =>
@@ -17,6 +22,9 @@ BlogApp.BlogsEditController = Em.Controller.extend
   blog: {}
 
   actions:
+    selectCategory: (categoryID) ->
+      category = @store.peekRecord('category', categoryID)
+      @set 'blog.category', category
     editBlog: ->
       blog = @get('blog')
       blog.save().then ((response) =>
