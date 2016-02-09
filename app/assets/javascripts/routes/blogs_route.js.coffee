@@ -8,6 +8,7 @@ BlogApp.BlogsRoute = Em.Route.extend
 BlogApp.BlogsNewRoute = Em.Route.extend
   setupController: (controller) ->
     controller.set 'blog', {}
+    controller.set 'categories', @store.findAll 'category'
 
 BlogApp.BlogsEditRoute = Em.Route.extend
   model:(params) ->
@@ -15,3 +16,4 @@ BlogApp.BlogsEditRoute = Em.Route.extend
 
   setupController: (controller, blog) ->
     controller.set 'blog', blog
+    controller.set 'categories', @store.findAll('category')

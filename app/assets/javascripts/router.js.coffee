@@ -6,3 +6,6 @@ BlogApp.Router.map ()->
   @resource 'blogs', path: 'blogs', ->
     @route 'new', path: 'new'
     @route 'edit', path: ':blog_id/edit'
+  @resource 'categories', path: 'categories', ->
+    @route 'new', path: 'new'
+    @route 'edit', path: ':category_id/edit'

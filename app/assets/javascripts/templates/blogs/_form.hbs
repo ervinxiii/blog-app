@@ -1,4 +1,12 @@
 <div>
+  <select onchange={{action "selectCategory" value="target.value"}}>
+    {{#each categories as |category|}}
+    <option value={{category.id}}>{{category.name}}</option>
+    {{/each}}
+  </select>
+</div>
+<br/>
+<div>
   <label>Title</label>
   {{input type="text" value=blog.title}}
 </div>
@@ -7,4 +15,3 @@
   <label>Body</label>
   {{textarea value=blog.body}}
 </div>
-

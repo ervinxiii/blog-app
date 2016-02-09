@@ -5,6 +5,7 @@ class Api::BlogsController < ApiController
 
   def create
     blog = Blog.new blog_params
+    blog.category_id = params[:blog][:category]
 
     if blog.save
       render json: blog, status: 200
@@ -21,6 +22,7 @@ class Api::BlogsController < ApiController
 
   def update
     blog = Blog.find params[:id]
+    blog.category_id = params[:blog][:category]
 
     if blog.update blog_params
       render json: blog, status: 200

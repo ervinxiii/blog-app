@@ -1,3 +1,5 @@
 class Blog < ActiveRecord::Base
-  validates :title, :body, presence: true
+  belongs_to :category
+
+  validates :category, :title, :body, presence: true
 end

@@ -1,0 +1,24 @@
+<h1> Categories </h1>
+<div>
+  {{outlet}}
+</div>
+{{#link-to 'categories.new'}} New Category {{/link-to}}
+|
+{{#link-to 'categories'}} Cancel {{/link-to}}
+<ul>
+  {{#each categories as |category|}}
+  <li>
+  <p>
+    {{category.name}}
+    | {{#link-to 'categories.edit' category}} Edit {{/link-to}}
+  </p>
+  <p>
+    {{category.description}}
+  </p>
+  </li>
+  {{/each}}
+</ul>
+
+{{#link-to 'index'}}
+  Back to index
+{{/link-to}}

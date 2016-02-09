@@ -1,3 +1,15 @@
 {{#link-to 'blogs'}}
   Go to Blogs
 {{/link-to}}
+<br/>
+{{#link-to 'categories'}}
+  Go to Categories
+{{/link-to}}
+
+{{custom-select content=categories optionLabelPath='name' optionValuePath='id' value=selectedCategoryID}}
+
+<ul>
+  {{#each filteredBlogs as |blog|}}
+    <li>{{blog.title}}</li>
+  {{/each}}
+</ul>
