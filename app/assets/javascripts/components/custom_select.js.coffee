@@ -1,5 +1,4 @@
 BlogApp.CustomSelectComponent = Em.Component.extend
-  tagName: 'select'
   optionLabelPath: null
   optionValuePath: null
 
@@ -12,3 +11,7 @@ BlogApp.CustomSelectComponent = Em.Component.extend
         value: opt.get(valuePath)
       }
   ).property('content.@each', 'optionLabelPath', 'optionValuePath')
+
+  actions:
+    setSelected: (opt) ->
+      @set 'value', opt

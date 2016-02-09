@@ -6,4 +6,10 @@
   Go to Categories
 {{/link-to}}
 
-{{custom-select content=categories optionLabelPath='name' optionValuePath='id'}}
+{{custom-select content=categories optionLabelPath='name' optionValuePath='id' value=selectedCategoryID}}
+
+<ul>
+  {{#each filteredBlogs as |blog|}}
+    <li>{{blog.title}}</li>
+  {{/each}}
+</ul>

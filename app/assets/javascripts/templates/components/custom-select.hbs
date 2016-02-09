@@ -1,3 +1,5 @@
-{{#each collection as |opt|}}
+<select onchange={{action "setSelected" value="target.value"}}>
+  {{#each collection as |opt|}}
   <option value={{opt.value}}>{{opt.label}}</option>
-{{/each}}
+  {{/each}}
+</select>
